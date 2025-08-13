@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu, X, Gamepad2, ChevronDown, Smartphone, Globe, Code, Palette, BarChart3, Cloud } from "lucide-react"
+import { Menu, X, Gamepad2, ChevronDown, Smartphone, Globe, Code, Palette, BarChart3, Cloud, ShoppingCart, Megaphone, Wallet, ArrowUpRight, Cpu } from "lucide-react"
 import { gsap } from "gsap"
 import { motion, AnimatePresence } from "framer-motion"
 import {
@@ -13,12 +13,11 @@ import {
 } from "../../components/ui/popover"
 
 const navItems = [
-  { name: "About Us", href: "/about" },
   { name: "Services", href: "/services", hasDropdown: true },
+  { name: "About", href: "/about" },
   { name: "Portfolio", href: "/portfolio" },
   { name: "Hire Developer", href: "/hire-developer" },
   { name: "Blog", href: "/blog" },
-  // { name: "Contact", href: "/contact" }, 
 ]
 
 // Animation variants for dropdown
@@ -28,7 +27,7 @@ const dropdownVariants = {
     y: -10,
     scale: 0.95,
     transition: {
-      duration: 0.2,
+      duration: 0.1,
     }
   },
   visible: {
@@ -36,7 +35,7 @@ const dropdownVariants = {
     y: 0,
     scale: 1,
     transition: {
-      duration: 0.3,
+      duration: 0.1,
       staggerChildren: 0.05
     }
   },
@@ -45,7 +44,7 @@ const dropdownVariants = {
     y: -10,
     scale: 0.95,
     transition: {
-      duration: 0.2,
+      duration: 0.1,
     }
   }
 }
@@ -87,43 +86,102 @@ const linkVariants = {
 
 const servicesDropdown = [
   {
-    category: "Mobile App Development",
-    icon: Smartphone,
+    category: "DEVELOPMENT",
     services: [
-      { name: "iOS App Development", href: "/services/ios-development" },
-      { name: "Android App Development", href: "/services/android-development" },
-      { name: "React Native Development", href: "/services/react-native" },
-      { name: "Flutter Development", href: "/services/flutter" }
+      {
+        name: "Frontend Development",
+        description: "Learn more about frontend development",
+        href: "/services/frontend-development",
+        icon: Globe,
+        iconColor: "from-blue-500 to-blue-600"
+      },
+      {
+        name: "Backend Development",
+        description: "Learn more about backend development",
+        href: "/services/backend-development",
+        icon: Code,
+        iconColor: "from-purple-500 to-purple-600"
+      },
+      {
+        name: "Full Stack Development",
+        description: "Learn more about full stack development",
+        href: "/services/fullstack-development",
+        icon: Cpu,
+        iconColor: "from-green-500 to-green-600"
+      },
+      {
+        name: "E-commerce Development",
+        description: "Learn more about e-commerce development",
+        href: "/services/ecommerce-development",
+        icon: ShoppingCart,
+        iconColor: "from-orange-500 to-orange-600"
+      }
     ]
   },
   {
-    category: "Web Development",
-    icon: Palette,
+    category: "MOBILE DEVELOPMENT",
     services: [
-      { name: "User Interface Design", href: "/services/ui-design" },
-      { name: "User Experience Design", href: "/services/ux-design" },
-      { name: "Prototyping", href: "/services/prototyping" },
-      { name: "Design Systems", href: "/services/design-systems" }
+      {
+        name: "iOS Development",
+        description: "Learn more about iOS development",
+        href: "/services/ios-development",
+        icon: Smartphone,
+        iconColor: "from-blue-400 to-blue-500"
+      },
+      {
+        name: "Android Development",
+        description: "Learn more about Android development",
+        href: "/services/android-development",
+        icon: Smartphone,
+        iconColor: "from-green-500 to-green-600"
+      },
+      {
+        name: "React Native",
+        description: "Learn more about React Native development",
+        href: "/services/react-native",
+        icon: Smartphone,
+        iconColor: "from-blue-500 to-blue-600"
+      },
+      {
+        name: "Flutter Development",
+        description: "Learn more about Flutter development",
+        href: "/services/flutter",
+        icon: Smartphone,
+        iconColor: "from-blue-600 to-blue-700"
+      }
     ]
   },
   {
-    category: "Digital Marketing",
-    icon: BarChart3,
+    category: "GAME DEVELOPMENT",
     services: [
-      { name: "SEO Optimization", href: "/services/seo" },
-      { name: "Social Media Marketing", href: "/services/social-media" },
-      { name: "Content Marketing", href: "/services/content-marketing" },
-      { name: "PPC Advertising", href: "/services/ppc" }
-    ]
-  },
-  {
-    category: "Cloud & DevOps",
-    icon: Cloud,
-    services: [
-      { name: "Cloud Migration", href: "/services/cloud-migration" },
-      { name: "DevOps Implementation", href: "/services/devops" },
-      { name: "Infrastructure as Code", href: "/services/iac" },
-      { name: "Container Orchestration", href: "/services/kubernetes" }
+      {
+        name: "Poker Game Development",
+        description: "Learn more about poker game development",
+        href: "/services/poker-game-development",
+        icon: Gamepad2,
+        iconColor: "from-red-500 to-red-600"
+      },
+      {
+        name: "Casino Game Development",
+        description: "Learn more about casino game development",
+        href: "/services/casino-game-development",
+        icon: Gamepad2,
+        iconColor: "from-yellow-500 to-yellow-600"
+      },
+      {
+        name: "Mobile Game Development",
+        description: "Learn more about mobile game development",
+        href: "/services/mobile-game-development",
+        icon: Gamepad2,
+        iconColor: "from-purple-500 to-purple-600"
+      },
+      {
+        name: "Browser Game Development",
+        description: "Learn more about browser game development",
+        href: "/services/browser-game-development",
+        icon: Gamepad2,
+        iconColor: "from-green-500 to-green-600"
+      }
     ]
   }
 ]
@@ -132,7 +190,7 @@ export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-  const [hoveredCategory, setHoveredCategory] = useState<string | null>(null)
+  const [hoveredService, setHoveredService] = useState<string | null>(null)
   const mobileMenuRef = useRef<HTMLDivElement>(null)
   const pathname = usePathname()
 
@@ -145,7 +203,7 @@ export default function Navigation() {
   }, [])
 
   useEffect(() => {
-    gsap.fromTo(".nav-item", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, delay: 0.2 })
+    gsap.fromTo(".nav-item", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, delay: 0.2 })
   }, [])
 
   // Focus management for mobile menu
@@ -173,12 +231,17 @@ export default function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
+          {/* Logo and Brand - Left Side */}
           <Link href="/" className="flex items-center space-x-3 nav-item">
-            <div className="w-24 h-24 flex items-center justify-center">
-              <img src="/coadal.svg" alt="Coadal Logo" className="h-20 w-20" />
+            <div className="flex flex-col">
+              <div className=" h-8 flex items-center justify-center">
+                <img src="/coadal-icon.png" alt="Coadal Logo" className="size-32" />
+              </div>
+              <span className="text-gray-400 text-[10px] text-center">We Create Your Dreams</span>
             </div>
           </Link>
 
+          {/* Navigation Links - Center */}
           <div className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
               <div key={item.name} className="relative">
@@ -188,7 +251,7 @@ export default function Navigation() {
                     onMouseEnter={() => setIsServicesDropdownOpen(true)}
                     onMouseLeave={() => setIsServicesDropdownOpen(false)}
                   >
-                    <button className="nav-item text-gray-300 hover:text-magenta-400 transition-colors duration-300 font-medium flex items-center">
+                    <button className="nav-item text-gray-300 hover:text-blue-400 transition-colors duration-300 font-medium flex items-center">
                       {item.name}
                       <motion.div
                         animate={{ rotate: isServicesDropdownOpen ? 180 : 0 }}
@@ -205,161 +268,46 @@ export default function Navigation() {
                           initial="hidden"
                           animate="visible"
                           exit="exit"
-                          className="absolute top-full left-0 mt-2 w-[600px] bg-black/95 backdrop-blur-md border border-gray-800 rounded-xl shadow-2xl overflow-hidden"
+                          className="absolute top-full left-0 mt-2 w-[800px] bg-gray-900/95 backdrop-blur-md border border-gray-800 rounded-xl shadow-2xl overflow-hidden"
                         >
                           <div className="p-6">
                             <motion.div
-                              variants={categoryVariants}
-                              initial="hidden"
-                              animate="visible"
                               className="grid grid-cols-3 gap-8"
                             >
-                              {/* Mobile App Development */}
-                              <motion.div
-                                variants={categoryVariants}
-                                className="space-y-6"
-                                onMouseEnter={() => setHoveredCategory("mobile")}
-                                onMouseLeave={() => setHoveredCategory(null)}
-                              >
-                                <div className="space-y-3">
-                                  <div className="flex items-center mb-3">
-                                    <motion.div
-                                      whileHover={{ scale: 1.1, rotate: 5 }}
-                                      className="w-8 h-8 bg-gradient-to-r from-magenta-500 to-purple-600 rounded-lg flex items-center justify-center mr-3"
-                                    >
-                                      <Smartphone className="h-4 w-4 text-white" />
-                                    </motion.div>
-                                    <h3 className="text-sm font-semibold text-white">Mobile App Development</h3>
+                              {servicesDropdown.map((category) => (
+                                <motion.div
+                                  key={category.category}
+                                  className="space-y-4"
+                                >
+                                  <h3 className="text-sm font-bold text-white mb-4">{category.category}</h3>
+                                  <div className="space-y-3">
+                                    {category.services.map((service) => {
+                                      const IconComponent = service.icon
+                                      return (
+                                        <motion.div
+                                          key={service.name}
+                                          variants={linkVariants}
+                                          whileHover="hover"
+                                          onMouseEnter={() => setHoveredService(service.name)}
+                                          onMouseLeave={() => setHoveredService(null)}
+                                          className={`p-3 rounded-lg transition-all duration-200 ${hoveredService === service.name ? 'bg-gray-800/50' : ''
+                                            }`}
+                                        >
+                                          <Link href={service.href} className="flex items-start space-x-3">
+                                            <div className={`w-8 h-8 bg-gradient-to-r ${service.iconColor} rounded-lg flex items-center justify-center flex-shrink-0`}>
+                                              <IconComponent className="h-4 w-4 text-white" />
+                                            </div>
+                                            <div className="flex-1">
+                                              <h4 className="text-sm font-semibold text-white">{service.name}</h4>
+                                              <p className="text-xs text-gray-400 mt-1">{service.description}</p>
+                                            </div>
+                                          </Link>
+                                        </motion.div>
+                                      )
+                                    })}
                                   </div>
-                                  <div className="space-y-1 ml-11">
-                                    <motion.div variants={linkVariants} whileHover="hover">
-                                      <Link href="/services/ios-development" className="block text-sm text-gray-300 hover:text-magenta-400 transition-colors py-1">
-                                        iOS App Development
-                                      </Link>
-                                    </motion.div>
-                                    <motion.div variants={linkVariants} whileHover="hover">
-                                      <Link href="/services/android-development" className="block text-sm text-gray-300 hover:text-magenta-400 transition-colors py-1">
-                                        Android App Development
-                                      </Link>
-                                    </motion.div>
-                                    <motion.div variants={linkVariants} whileHover="hover">
-                                      <Link href="/services/react-native" className="block text-sm text-gray-300 hover:text-magenta-400 transition-colors py-1">
-                                        React Native Development
-                                      </Link>
-                                    </motion.div>
-                                    <motion.div variants={linkVariants} whileHover="hover">
-                                      <Link href="/services/flutter" className="block text-sm text-gray-300 hover:text-magenta-400 transition-colors py-1">
-                                        Flutter Development
-                                      </Link>
-                                    </motion.div>
-                                  </div>
-                                </div>
-                              </motion.div>
-
-                              {/* Web Development */}
-                              <motion.div
-                                variants={categoryVariants}
-                                className="space-y-6"
-                                onMouseEnter={() => setHoveredCategory("web")}
-                                onMouseLeave={() => setHoveredCategory(null)}
-                              >
-                                <div className="space-y-3">
-                                  <div className="flex items-center mb-3">
-                                    <motion.div
-                                      whileHover={{ scale: 1.1, rotate: 5 }}
-                                      className="w-8 h-8 bg-gradient-to-r from-magenta-500 to-purple-600 rounded-lg flex items-center justify-center mr-3"
-                                    >
-                                      <Globe className="h-4 w-4 text-white" />
-                                    </motion.div>
-                                    <h3 className="text-sm font-semibold text-white">Web Development</h3>
-                                  </div>
-                                  <div className="space-y-1 ml-11">
-                                    <motion.div variants={linkVariants} whileHover="hover">
-                                      <Link href="/services/frontend-development" className="block text-sm text-gray-300 hover:text-magenta-400 transition-colors py-1">
-                                        Frontend Development
-                                      </Link>
-                                    </motion.div>
-                                    <motion.div variants={linkVariants} whileHover="hover">
-                                      <Link href="/services/backend-development" className="block text-sm text-gray-300 hover:text-magenta-400 transition-colors py-1">
-                                        Backend Development
-                                      </Link>
-                                    </motion.div>
-                                    <motion.div variants={linkVariants} whileHover="hover">
-                                      <Link href="/services/fullstack-development" className="block text-sm text-gray-300 hover:text-magenta-400 transition-colors py-1">
-                                        Full Stack Development
-                                      </Link>
-                                    </motion.div>
-                                    <motion.div variants={linkVariants} whileHover="hover">
-                                      <Link href="/services/ecommerce-development" className="block text-sm text-gray-300 hover:text-magenta-400 transition-colors py-1">
-                                        E-commerce Development
-                                      </Link>
-                                    </motion.div>
-                                  </div>
-                                </div>
-                              </motion.div>
-
-                              {/* Game Development */}
-                              <motion.div
-                                variants={categoryVariants}
-                                className="space-y-6"
-                                onMouseEnter={() => setHoveredCategory("game")}
-                                onMouseLeave={() => setHoveredCategory(null)}
-                              >
-                                <div className="space-y-3">
-                                  <div className="flex items-center mb-3">
-                                    <motion.div
-                                      whileHover={{ scale: 1.1, rotate: 5 }}
-                                      className="w-8 h-8 bg-gradient-to-r from-magenta-500 to-purple-600 rounded-lg flex items-center justify-center mr-3"
-                                    >
-                                      <Gamepad2 className="h-4 w-4 text-white" />
-                                    </motion.div>
-                                    <h3 className="text-sm font-semibold text-white">Game Development</h3>
-                                  </div>
-                                  <div className="space-y-1 ml-11">
-                                    <motion.div variants={linkVariants} whileHover="hover">
-                                      <Link href="/services/poker-game-development" className="block text-sm text-gray-300 hover:text-magenta-400 transition-colors py-1">
-                                        Poker Game Development
-                                      </Link>
-                                    </motion.div>
-                                    <motion.div variants={linkVariants} whileHover="hover">
-                                      <Link href="/services/casino-game-development" className="block text-sm text-gray-300 hover:text-magenta-400 transition-colors py-1">
-                                        Casino Game Development
-                                      </Link>
-                                    </motion.div>
-                                    <motion.div variants={linkVariants} whileHover="hover">
-                                      <Link href="/services/mobile-game-development" className="block text-sm text-gray-300 hover:text-magenta-400 transition-colors py-1">
-                                        Mobile Game Development
-                                      </Link>
-                                    </motion.div>
-                                    <motion.div variants={linkVariants} whileHover="hover">
-                                      <Link href="/services/browser-game-development" className="block text-sm text-gray-300 hover:text-magenta-400 transition-colors py-1">
-                                        Browser Game Development
-                                      </Link>
-                                    </motion.div>
-                                  </div>
-                                </div>
-                              </motion.div>
-                            </motion.div>
-
-                            {/* Bottom CTA with animation */}
-                            <motion.div
-                              variants={linkVariants}
-                              className="mt-6 pt-4 border-t border-gray-800"
-                            >
-                              <div className="flex items-center justify-between">
-                                <div>
-                                  <h4 className="text-white text-sm font-semibold mb-1">Ready to get started?</h4>
-                                  <p className="text-gray-400 text-xs">Let's discuss your project requirements</p>
-                                </div>
-                                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                                  <Link
-                                    href="/contact"
-                                    className="bg-gradient-to-r from-magenta-500 to-purple-600 hover:from-magenta-600 hover:to-purple-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300"
-                                  >
-                                    Get In Touch
-                                  </Link>
                                 </motion.div>
-                              </div>
+                              ))}
                             </motion.div>
                           </div>
                         </motion.div>
@@ -369,13 +317,17 @@ export default function Navigation() {
                 ) : (
                   <Link
                     href={item.href}
-                    className="nav-item text-gray-300 hover:text-magenta-400 transition-colors duration-300 font-medium"
+                    className="nav-item text-gray-300 hover:text-blue-400 transition-colors duration-300 font-medium"
                   >
                     {item.name}
                   </Link>
                 )}
               </div>
             ))}
+          </div>
+
+          {/* CTA Button - Right Side */}
+          <div className="hidden lg:block">
             <Link href="/contact">
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -387,14 +339,16 @@ export default function Navigation() {
             </Link>
           </div>
 
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 text-white hover:text-magenta-400 transition-colors"
+            className="lg:hidden p-2 text-white hover:text-blue-400 transition-colors"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
 
+        {/* Mobile Menu */}
         {isMenuOpen && (
           <motion.div
             ref={mobileMenuRef}
@@ -403,7 +357,7 @@ export default function Navigation() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
             className="lg:hidden fixed top-20 left-0 right-0 bg-black/95 backdrop-blur-md border-b border-gray-800 max-h-[calc(100vh-5rem)] overflow-y-auto z-40"
-            style={{ scrollbarWidth: 'thin', scrollbarColor: '#9333ea #1f2937' }}
+            style={{ scrollbarWidth: 'thin', scrollbarColor: '#3b82f6 #1f2937' }}
             tabIndex={-1}
           >
             <div className="px-4 py-6 space-y-2">
@@ -413,7 +367,7 @@ export default function Navigation() {
                     <div>
                       <button
                         onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
-                        className="flex w-full text-left py-3 px-2 text-gray-300 hover:text-magenta-400 hover:bg-gray-800/50 rounded-lg transition-all items-center justify-between"
+                        className="flex w-full text-left py-3 px-2 text-gray-300 hover:text-blue-400 hover:bg-gray-800/50 rounded-lg transition-all items-center justify-between"
                       >
                         {item.name}
                         <ChevronDown className={`h-4 w-4 transition-transform ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
@@ -425,78 +379,36 @@ export default function Navigation() {
                           exit={{ opacity: 0, height: 0 }}
                           className="ml-4 mt-2 space-y-4 bg-gray-900/50 rounded-lg p-4"
                         >
-                          {/* Mobile App Development */}
-                          <div>
-                            <div className="flex items-center mb-3">
-                              <Smartphone className="h-4 w-4 text-magenta-400 mr-2" />
-                              <span className="text-sm font-medium text-white">Mobile App Development</span>
+                          {servicesDropdown.map((category) => (
+                            <div key={category.category}>
+                              <h3 className="text-sm font-bold text-white mb-3">{category.category}</h3>
+                              <div className="space-y-2">
+                                {category.services.map((service) => {
+                                  const IconComponent = service.icon
+                                  return (
+                                    <Link
+                                      key={service.name}
+                                      href={service.href}
+                                      className="flex items-center space-x-3 py-2 px-3 text-sm text-gray-300 hover:text-blue-400 hover:bg-gray-800/30 rounded transition-all"
+                                      onClick={() => setIsMenuOpen(false)}
+                                    >
+                                      <div className={`w-6 h-6 bg-gradient-to-r ${service.iconColor} rounded flex items-center justify-center`}>
+                                        <IconComponent className="h-3 w-3 text-white" />
+                                      </div>
+                                      <span>{service.name}</span>
+                                    </Link>
+                                  )
+                                })}
+                              </div>
                             </div>
-                            <div className="space-y-2">
-                              <Link href="/services/ios-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
-                                iOS App Development
-                              </Link>
-                              <Link href="/services/android-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
-                                Android App Development
-                              </Link>
-                              <Link href="/services/react-native" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
-                                React Native Development
-                              </Link>
-                              <Link href="/services/flutter" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
-                                Flutter Development
-                              </Link>
-                            </div>
-                          </div>
-
-                          {/* Web Development */}
-                          <div>
-                            <div className="flex items-center mb-3">
-                              <Globe className="h-4 w-4 text-magenta-400 mr-2" />
-                              <span className="text-sm font-medium text-white">Web Development</span>
-                            </div>
-                            <div className="space-y-2">
-                              <Link href="/services/frontend-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
-                                Frontend Development
-                              </Link>
-                              <Link href="/services/backend-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
-                                Backend Development
-                              </Link>
-                              <Link href="/services/fullstack-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
-                                Full Stack Development
-                              </Link>
-                              <Link href="/services/ecommerce-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
-                                E-commerce Development
-                              </Link>
-                            </div>
-                          </div>
-
-                          {/* Game Development */}
-                          <div>
-                            <div className="flex items-center mb-3">
-                              <Gamepad2 className="h-4 w-4 text-magenta-400 mr-2" />
-                              <span className="text-sm font-medium text-white">Game Development</span>
-                            </div>
-                            <div className="space-y-2">
-                              <Link href="/services/poker-game-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
-                                Poker Game Development
-                              </Link>
-                              <Link href="/services/casino-game-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
-                                Casino Game Development
-                              </Link>
-                              <Link href="/services/mobile-game-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
-                                Mobile Game Development
-                              </Link>
-                              <Link href="/services/browser-game-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
-                                Browser Game Development
-                              </Link>
-                            </div>
-                          </div>
+                          ))}
                         </motion.div>
                       )}
                     </div>
                   ) : (
                     <Link
                       href={item.href}
-                      className="block w-full text-left py-3 px-2 text-gray-300 hover:text-magenta-400 hover:bg-gray-800/50 rounded-lg transition-all"
+                      className="block w-full text-left py-3 px-2 text-gray-300 hover:text-blue-400 hover:bg-gray-800/50 rounded-lg transition-all"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {item.name}
@@ -511,9 +423,9 @@ export default function Navigation() {
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full bg-gradient-to-r from-magenta-500 to-purple-600 hover:from-magenta-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 text-center"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 text-center"
                   >
-                    Contact Us
+                    Get Started
                   </motion.button>
                 </Link>
               </div>

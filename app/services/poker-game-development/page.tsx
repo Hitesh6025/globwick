@@ -4,7 +4,7 @@ import AnimatedBackground from "../../components/AnimatedBackground"
 import { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { 
+import {
   Spade,
   Heart,
   Diamond,
@@ -40,18 +40,18 @@ export default function PokerGameDevelopment() {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
-    
+
     // Hero section animations
     const tl = gsap.timeline({ delay: 0.3 })
-    
+
     if (titleRef.current) {
       tl.fromTo(
-        titleRef.current, 
-        { opacity: 0, y: 100, rotateX: -90 }, 
+        titleRef.current,
+        { opacity: 0, y: 100, rotateX: -90 },
         { opacity: 1, y: 0, rotateX: 0, duration: 1.5, ease: "power3.out" }
       )
     }
-    
+
     if (subtitleRef.current) {
       tl.fromTo(
         subtitleRef.current,
@@ -60,7 +60,7 @@ export default function PokerGameDevelopment() {
         "-=1"
       )
     }
-    
+
     if (ctaRef.current) {
       tl.fromTo(
         ctaRef.current,
@@ -69,7 +69,7 @@ export default function PokerGameDevelopment() {
         "-=0.5"
       )
     }
-    
+
     // Section animations with ScrollTrigger
     sectionRefs.forEach((ref) => {
       if (ref.current) {
@@ -90,7 +90,7 @@ export default function PokerGameDevelopment() {
         )
       }
     })
-    
+
     // Playing card floating animation
     const playingCards = gsap.utils.toArray<HTMLElement>(".playing-card")
     if (playingCards.length > 0) {
@@ -107,7 +107,7 @@ export default function PokerGameDevelopment() {
         })
       })
     }
-    
+
     // Feature cards animation
     const featureCards = gsap.utils.toArray<HTMLElement>(".poker-feature-card")
     featureCards.forEach((card) => {
@@ -121,7 +121,7 @@ export default function PokerGameDevelopment() {
           boxShadow: "0 25px 50px -12px rgba(220, 38, 38, 0.25)"
         })
       })
-      
+
       card.addEventListener("mouseleave", () => {
         gsap.to(card, {
           y: 0,
@@ -136,9 +136,9 @@ export default function PokerGameDevelopment() {
   }, [])
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 overflow-x-hidden">
+    <div className="relative min-h-screen bg-black/50 overflow-x-hidden pt-20">
       <AnimatedBackground />
-       
+
       <main className="relative z-10 pt-24 pb-12 px-4 md:px-8">
         {/* Hero Section - Casino Table Theme */}
         <section ref={heroRef} className="w-full max-w-7xl mx-auto text-center mb-40">
@@ -148,7 +148,7 @@ export default function PokerGameDevelopment() {
             <div className="playing-card absolute top-32 right-1/3 w-16 h-24 bg-gradient-to-br from-gray-800 to-black rounded-lg border-2 border-gray-600/30 shadow-lg"></div>
             <div className="playing-card absolute top-16 right-1/4 w-16 h-24 bg-gradient-to-br from-red-600 to-red-800 rounded-lg border-2 border-red-400/30 shadow-lg"></div>
           </div>
-          
+
           <div className="relative">
             <h1 ref={titleRef} className="text-6xl md:text-9xl font-black mb-8 leading-none">
               <span className="block bg-gradient-to-r from-red-400 via-yellow-500 to-orange-500 bg-clip-text text-transparent drop-shadow-2xl">
@@ -158,13 +158,13 @@ export default function PokerGameDevelopment() {
                 MASTERY
               </span>
             </h1>
-            
+
             <p ref={subtitleRef} className="text-2xl md:text-4xl text-gray-100 mb-16 max-w-4xl mx-auto font-medium leading-relaxed">
               Where Strategy Meets Technology
               <br />
               <span className="text-xl md:text-2xl text-red-400 font-light">Premium Poker Game Development</span>
             </p>
-            
+
             <div ref={ctaRef} className="flex flex-col sm:flex-row gap-8 justify-center items-center">
               <a href="/contact" className="group relative inline-block">
                 <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-orange-600 rounded-2xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -175,7 +175,7 @@ export default function PokerGameDevelopment() {
                   </div>
                 </div>
               </a>
-              
+
               <div className="flex items-center gap-4">
                 <div className="h-px w-16 bg-gradient-to-r from-transparent via-red-400 to-transparent"></div>
                 <div className="flex space-x-2">
@@ -186,7 +186,7 @@ export default function PokerGameDevelopment() {
                 </div>
                 <div className="h-px w-16 bg-gradient-to-r from-transparent via-red-400 to-transparent"></div>
               </div>
-              
+
               <a href="/portfolio" className="group border-3 border-red-500 hover:border-yellow-400 text-white px-12 py-6 rounded-2xl font-black text-2xl transition-all duration-300 hover:scale-105 hover:bg-gradient-to-r hover:from-red-500/20 hover:to-yellow-500/20 backdrop-blur-sm">
                 <div className="flex items-center justify-center">
                   <Eye className="h-8 w-8 mr-3 group-hover:scale-110 transition-transform duration-300" />
@@ -196,13 +196,13 @@ export default function PokerGameDevelopment() {
             </div>
           </div>
         </section>
-        
+
         {/* Poker Variants Section - Casino Chip Design */}
         <section ref={sectionRefs[0]} className="w-full max-w-7xl mx-auto mb-40">
           <h2 className="text-5xl md:text-6xl font-black text-center mb-20 bg-gradient-to-r from-red-400 via-yellow-500 to-orange-500 bg-clip-text text-transparent">
             Premium Poker Variants
           </h2>
-          
+
           {/* Casino chip layout */}
           <div className="relative flex flex-wrap justify-center gap-8">
             {/* Texas Hold'em */}
@@ -221,7 +221,7 @@ export default function PokerGameDevelopment() {
                 </div>
               </div>
             </div>
-            
+
             {/* Omaha */}
             <div className="poker-feature-card group relative">
               <div className="w-72 h-72 rounded-full bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 border-8 border-silver shadow-2xl flex flex-col items-center justify-center p-8 cursor-pointer transition-all duration-500">
@@ -238,7 +238,7 @@ export default function PokerGameDevelopment() {
                 </div>
               </div>
             </div>
-            
+
             {/* Seven Card Stud */}
             <div className="poker-feature-card group relative">
               <div className="w-72 h-72 rounded-full bg-gradient-to-br from-green-600 via-green-700 to-green-900 border-8 border-bronze shadow-2xl flex flex-col items-center justify-center p-8 cursor-pointer transition-all duration-500">
@@ -255,7 +255,7 @@ export default function PokerGameDevelopment() {
                 </div>
               </div>
             </div>
-            
+
             {/* Tournament */}
             <div className="poker-feature-card group relative">
               <div className="w-72 h-72 rounded-full bg-gradient-to-br from-purple-600 via-purple-700 to-purple-900 border-8 border-pink-400 shadow-2xl flex flex-col items-center justify-center p-8 cursor-pointer transition-all duration-500">
@@ -274,19 +274,19 @@ export default function PokerGameDevelopment() {
             </div>
           </div>
         </section>
-        
+
         {/* Technology Stack - Poker Table Layout */}
         <section ref={sectionRefs[1]} className="w-full max-w-7xl mx-auto mb-40">
           <h2 className="text-5xl md:text-6xl font-black text-center mb-20 bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
             Our Tech Arsenal
           </h2>
-          
+
           {/* Poker table representation */}
           <div className="relative max-w-5xl mx-auto">
             <div className="relative w-full h-[600px] bg-gradient-to-br from-green-800 via-green-900 to-green-950 rounded-full border-8 border-yellow-600/50 shadow-2xl overflow-hidden">
               {/* Table felt texture */}
               <div className="absolute inset-0 bg-gradient-to-br from-green-700/50 via-transparent to-green-950/50"></div>
-              
+
               {/* Center logo area */}
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full bg-gradient-to-br from-yellow-600 to-yellow-800 border-4 border-yellow-400 flex items-center justify-center shadow-2xl">
                 <div className="text-center">
@@ -295,7 +295,7 @@ export default function PokerGameDevelopment() {
                   <div className="text-yellow-100 font-bold text-sm">INNOVATION</div>
                 </div>
               </div>
-              
+
               {/* Tech cards around the table */}
               {/* Real-time Multiplayer */}
               <div className="absolute top-8 left-1/2 transform -translate-x-1/2">
@@ -307,7 +307,7 @@ export default function PokerGameDevelopment() {
                   </div>
                 </div>
               </div>
-              
+
               {/* AI & Bots */}
               <div className="absolute top-20 right-8">
                 <div className="poker-feature-card bg-gradient-to-br from-blue-700 to-blue-900 rounded-2xl p-6 border-2 border-blue-500/50 shadow-lg w-48 group cursor-pointer">
@@ -318,7 +318,7 @@ export default function PokerGameDevelopment() {
                   </div>
                 </div>
               </div>
-              
+
               {/* Security */}
               <div className="absolute bottom-20 right-8">
                 <div className="poker-feature-card bg-gradient-to-br from-purple-700 to-purple-900 rounded-2xl p-6 border-2 border-purple-500/50 shadow-lg w-48 group cursor-pointer">
@@ -329,7 +329,7 @@ export default function PokerGameDevelopment() {
                   </div>
                 </div>
               </div>
-              
+
               {/* Payment Systems */}
               <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
                 <div className="poker-feature-card bg-gradient-to-br from-green-700 to-green-900 rounded-2xl p-6 border-2 border-green-500/50 shadow-lg w-48 group cursor-pointer">
@@ -340,7 +340,7 @@ export default function PokerGameDevelopment() {
                   </div>
                 </div>
               </div>
-              
+
               {/* Analytics */}
               <div className="absolute bottom-20 left-8">
                 <div className="poker-feature-card bg-gradient-to-br from-orange-700 to-orange-900 rounded-2xl p-6 border-2 border-orange-500/50 shadow-lg w-48 group cursor-pointer">
@@ -351,7 +351,7 @@ export default function PokerGameDevelopment() {
                   </div>
                 </div>
               </div>
-              
+
               {/* Cross-Platform */}
               <div className="absolute top-20 left-8">
                 <div className="poker-feature-card bg-gradient-to-br from-cyan-700 to-cyan-900 rounded-2xl p-6 border-2 border-cyan-500/50 shadow-lg w-48 group cursor-pointer">
@@ -365,13 +365,13 @@ export default function PokerGameDevelopment() {
             </div>
           </div>
         </section>
-        
+
         {/* Why Choose Our Poker Development - Card Hand Layout */}
         <section ref={sectionRefs[2]} className="w-full max-w-7xl mx-auto mb-40">
           <h2 className="text-5xl md:text-6xl font-black text-center mb-20 p-1 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
             Royal Flush Features
           </h2>
-          
+
           {/* Playing card hand layout */}
           <div className="flex flex-wrap justify-center gap-6 perspective-1000">
             {/* Card 1 - Security */}
@@ -398,7 +398,7 @@ export default function PokerGameDevelopment() {
                 </div>
               </div>
             </div>
-            
+
             {/* Card 2 - Performance */}
             <div className="poker-feature-card transform rotate-6 hover:rotate-0 transition-all duration-500">
               <div className="w-64 h-96 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl border-4 border-gray-800 shadow-2xl p-8 flex flex-col">
@@ -423,7 +423,7 @@ export default function PokerGameDevelopment() {
                 </div>
               </div>
             </div>
-            
+
             {/* Card 3 - Scalability */}
             <div className="poker-feature-card transform -rotate-3 hover:rotate-0 transition-all duration-500">
               <div className="w-64 h-96 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl border-4 border-gray-800 shadow-2xl p-8 flex flex-col">
@@ -448,7 +448,7 @@ export default function PokerGameDevelopment() {
                 </div>
               </div>
             </div>
-            
+
             {/* Card 4 - Analytics */}
             <div className="poker-feature-card transform -rotate-8 hover:rotate-0 transition-all duration-500">
               <div className="w-64 h-96 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl border-4 border-gray-800 shadow-2xl p-8 flex flex-col">
@@ -473,7 +473,7 @@ export default function PokerGameDevelopment() {
                 </div>
               </div>
             </div>
-            
+
             {/* Card 5 - Support */}
             <div className="poker-feature-card transform -rotate-12 hover:rotate-0 transition-all duration-500">
               <div className="w-64 h-96 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl border-4 border-gray-800 shadow-2xl p-8 flex flex-col">
@@ -500,19 +500,19 @@ export default function PokerGameDevelopment() {
             </div>
           </div>
         </section>
-        
+
         {/* Call to Action - Casino Jackpot Style */}
         <section ref={sectionRefs[3]} className="w-full max-w-6xl mx-auto">
           <div className="relative overflow-hidden">
             {/* Jackpot machine background */}
             <div className="absolute inset-0 bg-gradient-to-br from-red-900/80 via-yellow-900/60 to-orange-900/80 rounded-3xl"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30 rounded-3xl"></div>
-            
+
             {/* Glowing border effect */}
             <div className="absolute inset-0 rounded-3xl border-4 border-yellow-400/50 shadow-2xl shadow-yellow-400/25"></div>
-            
+
             <div className="relative bg-gradient-to-br from-red-800/90 via-red-900/80 to-yellow-900/90 backdrop-blur-xl rounded-3xl p-16 text-center">
-              
+
               {/* Jackpot styling */}
               <div className="mb-12">
                 <div className="inline-flex items-center justify-center mb-6">
@@ -520,25 +520,25 @@ export default function PokerGameDevelopment() {
                     <div className="w-20 h-20 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center shadow-2xl shadow-yellow-500/50 animate-pulse">
                       <Crown className="h-10 w-10 text-white" />
                     </div>
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center shadow-2xl shadow-red-500/50 animate-pulse" style={{animationDelay: '0.5s'}}>
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center shadow-2xl shadow-red-500/50 animate-pulse" style={{ animationDelay: '0.5s' }}>
                       <Coins className="h-10 w-10 text-white" />
                     </div>
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center shadow-2xl shadow-yellow-500/50 animate-pulse" style={{animationDelay: '1s'}}>
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center shadow-2xl shadow-yellow-500/50 animate-pulse" style={{ animationDelay: '1s' }}>
                       <Trophy className="h-10 w-10 text-white" />
                     </div>
                   </div>
                 </div>
-                
+
                 <h3 className="text-5xl md:text-7xl font-black mb-4 bg-gradient-to-r from-yellow-300 via-yellow-400 to-orange-400 bg-clip-text text-transparent drop-shadow-2xl">
                   JACKPOT!
                 </h3>
                 <div className="text-2xl md:text-3xl font-bold text-yellow-200 mb-2">Your Winning Hand Awaits</div>
               </div>
-              
+
               <p className="text-xl md:text-2xl text-gray-100 mb-16 max-w-4xl mx-auto leading-relaxed">
                 Ready to develop the next legendary poker platform? Let's create a game that keeps players coming back for more - with cutting-edge technology, unbeatable security, and casino-grade performance.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
                 <a href="/contact" className="group relative inline-block">
                   <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -548,7 +548,7 @@ export default function PokerGameDevelopment() {
                     <ChevronRight className="h-8 w-8 ml-4 group-hover:translate-x-2 transition-transform duration-300" />
                   </div>
                 </a>
-                
+
                 <div className="text-center">
                   <div className="text-yellow-300 text-lg font-bold mb-2">🎰 BONUS FEATURES 🎰</div>
                   <div className="grid grid-cols-2 gap-4 text-sm">
@@ -563,7 +563,7 @@ export default function PokerGameDevelopment() {
                   </div>
                 </div>
               </div>
-              
+
               {/* Bottom stats - Slot machine style */}
               <div className="mt-16 pt-8 border-t border-yellow-400/30">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
