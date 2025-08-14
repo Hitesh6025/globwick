@@ -306,7 +306,7 @@ export default function AboutUs() {
                     <h3 className="text-2xl font-semibold text-white mb-2">Hritik Sharma</h3>
                     <p className="text-magenta-400 mb-3 font-medium">Founder & CEO</p>
                     <p className="text-gray-400 text-sm leading-relaxed">
-                      Globwick Technology, committed to building innovative, scalable digital solutions that empower businesses
+                      Globwick Technology, committed to building innovative, scalable digital solutions that empower businesses to grow, adapt, and thrive in a digital era.
                     </p>
                     <div className="flex gap-4 mt-4 justify-center">
                       <a href="mailto:hritik@globwick.com" target="_blank" rel="noopener noreferrer" className="hover:text-red-500">
