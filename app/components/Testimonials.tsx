@@ -25,7 +25,7 @@ const testimonials = [
     name: "Sam Wilson",
     company: "Indie Developer",
     quote:
-      "As a solo developer, I needed a reliable partner. Coadal's team felt like an extension of my own. Highly recommended!",
+      "As a solo developer, I needed a reliable partner. Globwick's team felt like an extension of my own. Highly recommended!",
   avatar: "/man.avif",
   },
 ]
