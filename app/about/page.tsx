@@ -184,7 +184,7 @@ export default function AboutUs() {
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
               About
               <span className="block bg-gradient-to-r from-magenta-400 to-purple-500 bg-clip-text text-transparent">
-                COADAL
+                Globwick
               </span>
             </h1>
           </div>
@@ -269,18 +269,18 @@ export default function AboutUs() {
               <div className="team-card">
                 <h2 className="text-4xl md:text-5xl font-bold mb-6">
                   Founders of
-                  <span className="block bg-gradient-to-r from-magenta-400 to-purple-500 bg-clip-text text-transparent">
-                    COADAL
+                  <span className="block block bg-gradient-to-r from-magenta-400 to-purple-500 bg-clip-text text-transparent">
+                    Globwick
                   </span>
                 </h2>
                 <p className="text-xl text-gray-300 leading-relaxed mb-8">
-                  Meet the visionary minds behind COADAL. Our founders bring together decades of experience 
+                  Meet the visionary minds behind Globwick. Our founders bring together decades of experience 
                   in game development, software engineering, and creative design. Their shared passion for 
                   innovation and excellence drives our mission to create extraordinary digital experiences 
                   that push the boundaries of what's possible in gaming and technology.
                 </p>
                 <p className="text-lg text-gray-400 leading-relaxed">
-                  Together, they have built COADAL from the ground up, establishing a culture of creativity, 
+                  Together, they have built Globwick from the ground up, establishing a culture of creativity, 
                   technical excellence, and unwavering commitment to delivering world-class gaming solutions.
                 </p>
               </div>
@@ -295,24 +295,24 @@ export default function AboutUs() {
                   <div className="relative h-64 overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent z-10" />
                     <img
-                      src="/co-founder/Aman.jpeg"
-                      alt="Aman | Co-Founder"
+                      src="/co-founder/Hritik.jpeg"
+                      alt="Hritik | Co-Founder"
                       className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                     />
                   </div>
                   
                   {/* Content Section */}
                   <div className="relative z-10 p-6">
-                    <h3 className="text-2xl font-semibold text-white mb-2">Aman Sharma</h3>
+                    <h3 className="text-2xl font-semibold text-white mb-2">Hritik Sharma</h3>
                     <p className="text-magenta-400 mb-3 font-medium">Founder & CEO</p>
                     <p className="text-gray-400 text-sm leading-relaxed">
-                       Coadal Technology, leading innovation in AI, custom software, and marketing solutions to help businesses grow smarter and faster.
+                      Globwick Technology, committed to building innovative, scalable digital solutions that empower businesses
                     </p>
                     <div className="flex gap-4 mt-4 justify-center">
-                      <a href="mailto:aman@coadal.com" target="_blank" rel="noopener noreferrer" className="hover:text-red-500">
+                      <a href="mailto:hritik@globwick.com" target="_blank" rel="noopener noreferrer" className="hover:text-red-500">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4C2.897 4 2 4.897 2 6v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 5.333-8-5.333V6h16zm-16 12V8.489l7.445 4.964a1.996 1.996 0 0 0 2.11 0L20 8.489V18H4z"/></svg>
                       </a>
-                      <a href="https://www.linkedin.com/in/aman-sharma-633628241/?originalSubdomain=in" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">
+                      <a href="https://www.linkedin.com/in/hritiksharma00/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.063-1.868-3.063-1.868 0-2.156 1.459-2.156 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.838-1.563 3.036 0 3.6 2.001 3.6 4.601v5.595z"/></svg>
                       </a>
                     </div>
@@ -328,28 +328,32 @@ export default function AboutUs() {
                   <div className="relative h-64 overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent z-10" />
                     <img
-                      src="\co-founder\Hritk.jpeg"
-                      alt="Hritik | Co-Founder"
+                      src="\co-founder\Aman.jpeg"
+                      alt="Aman | Co-Founder"
                       className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                     />
                   </div>
                   
                   {/* Content Section */}
+                  
                   <div className="relative z-10 p-6">
-                    <h3 className="text-2xl font-semibold text-white mb-2">Hritik Sharma</h3>
+                    <h3 className="text-2xl font-semibold text-white mb-2">Aman Sharma</h3>
+                    
                     <p className="text-purple-400 mb-3 font-medium">Co-Founder</p>
                     <p className="text-gray-400 text-sm leading-relaxed">
-                      Coadal Technology, committed to building innovative, scalable digital solutions that empower businesses
+                       Globwick Technology, leading innovation in AI, custom software, and marketing solutions to help businesses grow smarter and faster.
                     </p>
                     <div className="flex gap-4 mt-4 justify-center">
-                      <a href="mailto:hritik@coadal.com" target="_blank" rel="noopener noreferrer" className="hover:text-red-500">
+                      <a href="mailto:aman@globwick.com" target="_blank" rel="noopener noreferrer" className="hover:text-red-500">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4C2.897 4 2 4.897 2 6v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 5.333-8-5.333V6h16zm-16 12V8.489l7.445 4.964a1.996 1.996 0 0 0 2.11 0L20 8.489V18H4z"/></svg>
                       </a>
-                      <a href="https://www.linkedin.com/in/hritiksharma00/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">
+                      <a href="https://www.linkedin.com/in/aman-sharma-633628241/?originalSubdomain=in" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.063-1.868-3.063-1.868 0-2.156 1.459-2.156 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.838-1.563 3.036 0 3.6 2.001 3.6 4.601v5.595z"/></svg>
                       </a>
                     </div>
                   </div>
+
+                  
                 </div>
               </div>
             </div>

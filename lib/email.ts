@@ -137,7 +137,7 @@ const generateEmailHTML = (data: ContactFormData): string => {
         
         <div class="footer">
           <p>📅 Received: ${new Date().toLocaleString()}</p>
-          <p>From: COADAL Contact Form</p>
+          <p>From: Globwick Contact Form</p>
         </div>
       </div>
     </body>
@@ -148,7 +148,7 @@ const generateEmailHTML = (data: ContactFormData): string => {
 // Generate plain text email
 const generateEmailText = (data: ContactFormData): string => {
     return `
-New Contact Form Submission - COADAL
+New Contact Form Submission - Globwick
 
 👤 Name: ${data.firstName} ${data.lastName}
 📧 Email: ${data.email}
@@ -161,7 +161,7 @@ ${data.company ? `🏢 Company: ${data.company}` : ''}
 ${data.description}
 
 📅 Submitted: ${new Date().toLocaleString()}
-From: COADAL Contact Form
+From: Globwick Contact Form
   `
 }
 
@@ -172,7 +172,7 @@ export const sendContactEmail = async (formData: ContactFormData): Promise<boole
 
         // Email options
         const mailOptions = {
-            from: `"COADAL Contact Form" <${process.env.EMAIL_USER}>`,
+            from: `"Globwick Contact Form" <${process.env.EMAIL_USER}>`,
             to: process.env.RECIPIENT_EMAIL || process.env.EMAIL_USER, // Your email address
             subject: `🚀 New Contact: ${formData.service} - ${formData.firstName} ${formData.lastName}`,
             text: generateEmailText(formData),
@@ -232,13 +232,13 @@ export const sendAutoReplyEmail = async (formData: ContactFormData): Promise<boo
             </ul>
             
             <p>In the meantime, feel free to check out our portfolio or reach out if you have any questions.</p>
-            
-            <a href="mailto:hello@coadal.com" class="cta">Contact Us Directly</a>
+
+            <a href="mailto:hello@globwick.com" class="cta">Contact Us Directly</a>
           </div>
           
           <div class="footer">
-            <p><strong>COADAL</strong> - Bringing Your Ideas to Life</p>
-            <p>hello@coadal.com | +1 (555) 123-4567</p>
+            <p><strong>Globwick</strong> - Bringing Your Ideas to Life</p>
+            <p>hello@globwick.com | +91 95096 08121</p>
           </div>
         </div>
       </body>
@@ -246,7 +246,7 @@ export const sendAutoReplyEmail = async (formData: ContactFormData): Promise<boo
     `
 
         const mailOptions = {
-            from: `"COADAL Team" <${process.env.EMAIL_USER}>`,
+            from: `"Globwick Team" <${process.env.EMAIL_USER}>`,
             to: formData.email,
             subject: `Thank you for your inquiry, ${formData.firstName}! 🚀`,
             html: autoReplyHTML,

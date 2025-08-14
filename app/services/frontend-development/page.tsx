@@ -132,7 +132,7 @@ export default function FrontendDevelopmentPage() {
                 <AnimatedDiv variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
                   <SmoothButton className="px-8 py-4 text-lg" onClick={() => router.push('/contact')}>
                     Start Your Project
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    {/* <ArrowRight className="ml-2 h-5 w-5" /> */}
                   </SmoothButton>
                   {/* <SmoothButton variant="secondary" className="px-8 py-4 text-lg">
                     View Our Work

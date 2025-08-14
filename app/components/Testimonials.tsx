@@ -11,7 +11,7 @@ const testimonials = [
     name: "John Doe",
     company: "CEO, Alpha Games",
     quote:
-      "Coadal delivered beyond our expectations. Their technical expertise and creative input were invaluable to our project's success.",
+      "Globwick delivered beyond our expectations. Their technical expertise and creative input were invaluable to our project's success.",
   avatar: "/man.avif",
   },
   {

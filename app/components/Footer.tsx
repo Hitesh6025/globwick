@@ -10,7 +10,7 @@ import {
   Phone, 
   MapPin,
   Github,
-  Twitter,
+  Facebook,
   Linkedin,
   Instagram,
   ArrowRight,
@@ -58,9 +58,9 @@ export default function Footer() {
 
   const socialLinks = [
     // { name: "GitHub", icon: Github, href: "https://github.com/coadal", color: "hover:text-gray-300" },
-    { name: "Twitter", icon: Twitter, href: "https://x.com/amansharma5105?s=21", color: "hover:text-blue-400" },
-    { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/company/coadal-technology-private-limited/?viewAsMember=true", color: "hover:text-blue-500" },
-    { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/coadal_technology/?hl=en", color: "hover:text-pink-400" },
+  { name: "Facebook", icon: Facebook, href: "https://www.facebook.com/globewick/", color: "hover:text-blue-600" },
+    { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/company/globewick", color: "hover:text-blue-500" },
+    { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/globewick/", color: "hover:text-pink-400" },
   ]
 
   return (
@@ -81,7 +81,7 @@ export default function Footer() {
             <div className="lg:col-span-1 footer-item">
               <Link href="/" className="flex items-center space-x-3 mb-6 group">
                 <div className="w-24 h-24 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                  <img src="/coadal.svg" alt="Coadal Logo" className="h-20 w-20" />
+                  <img src="/globwick-icon.png" alt="Globwick Logo" className="h-20 w-20" />
                 </div>
               </Link>
               <p className="text-gray-400 mb-6 leading-relaxed">
@@ -92,7 +92,7 @@ export default function Footer() {
               {/* <div className="space-y-3">
                 <div className="flex items-center text-gray-400 hover:text-magenta-400 transition-colors duration-300">
                   <Mail className="h-4 w-4 mr-3 text-magenta-500" />
-                  <a href="mailto:coadalhello@.com" className="text-sm">hello@coadal.com</a>
+                  <a href="mailto:info@globwick.com" className="text-sm">info@globwick.com</a>
                 </div>
                 <div className="flex items-center text-gray-400 hover:text-magenta-400 transition-colors duration-300">
                   <Phone className="h-4 w-4 mr-3 text-magenta-500" />
@@ -179,7 +179,7 @@ export default function Footer() {
                 <div className="space-y-3">
                 <div className="flex items-center text-gray-400 hover:text-magenta-400 transition-colors duration-300">
                   <Mail className="h-4 w-4 mr-3 text-magenta-500" />
-                  <a href="mailto:info@coadal.com" className="text-sm">info@coadal.com</a>
+                  <a href="mailto:info@globwick.com" className="text-sm">info@globwick.com</a>
                 </div>
                 <div className="flex items-center text-gray-400 hover:text-magenta-400 transition-colors duration-300">
                   <Phone className="h-4 w-4 mr-3 text-magenta-500" />
@@ -238,7 +238,7 @@ export default function Footer() {
         <div className="py-6 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0">
             <div className="items-center text-gray-400 text-sm text-center">
-              © {new Date().getFullYear()} COADAL. All rights reserved.
+              © {new Date().getFullYear()} Globwick. All rights reserved.
             </div>
             {/* <div className="flex items-center space-x-6 text-gray-400 text-sm">
               <Link href="/privacy" className="hover:text-magenta-400 transition-colors duration-300">

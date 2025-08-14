@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     creator: '@amansharma5105',
   },
   keywords: SITE_KEYWORDS,
-  creator: 'coadal tech team',
+  creator: 'Globwick tech team',
   openGraph: {
     url: SITE_URL,
     type: 'website',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     locale: 'en-US',
     images: [
       {
-        url: '/favicon/favicon.png',
+        url: '/globwick-icon.png',
         width: 1200,
         height: 630,
         alt: SITE_DESCRIPTION,
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     ]
   },
   icons: {
-    icon: '/favicon/favicon.png',
+    icon: '/globwick-icon.png',
     // shortcut: '/favicon/favicon-16x16.png', apple: "/favicon/apple-touch-icon.png",
   }
 }

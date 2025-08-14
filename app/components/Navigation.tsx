@@ -235,9 +235,9 @@ export default function Navigation() {
           <Link href="/" className="flex items-center space-x-3 nav-item">
             <div className="flex flex-col">
               <div className=" h-8 flex items-center justify-center">
-                <img src="/coadal-icon.png" alt="Coadal Logo" className="size-32" />
+                <img src="/Globwick-icon.png" alt="Globwick Logo" className="size-12 mt-6" />
               </div>
-              <span className="text-gray-400 text-[10px] text-center">We Create Your Dreams</span>
+              <span className="text-gray-400 text-[10px] text-center mt-4">We Create Your Dreams</span>
             </div>
           </Link>
 
@@ -424,8 +424,8 @@ export default function Navigation() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 text-center"
-                  >
-                    Get Started
+                    >
+                      Contact
                   </motion.button>
                 </Link>
               </div>

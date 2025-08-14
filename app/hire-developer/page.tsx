@@ -278,7 +278,7 @@ const clientTestimonials = [
     name: "Sarah Chen",
     role: "CTO, GameStudio Pro",
     image: "/placeholder.svg?width=80&height=80",
-    content: "Hired 3 Unity developers from Coadal for our mobile racing game. They delivered exceptional work and helped us launch 2 months ahead of schedule.",
+    content: "Hired 3 Unity developers from Globwick for our mobile racing game. They delivered exceptional work and helped us launch 2 months ahead of schedule.",
     rating: 5,
     project: "Mobile Racing Game"
   },
@@ -294,7 +294,7 @@ const clientTestimonials = [
     name: "Emily Johnson",
     role: "Product Manager, FinanceApp",
     image: "/placeholder.svg?width=80&height=80",
-    content: "Working with Coadal's mobile team was seamless. They built our fintech app with bank-level security and beautiful UX. Highly recommended!",
+    content: "Working with Globwick's mobile team was seamless. They built our fintech app with bank-level security and beautiful UX. Highly recommended!",
     rating: 5,
     project: "FinTech Mobile App"
   }
@@ -448,7 +448,7 @@ export default function HireDeveloper() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-              Hire Coadal Developers
+              Hire Globwick Developers
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Find the perfect developer for your project based on different criteria
@@ -745,7 +745,7 @@ export default function HireDeveloper() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-              Why Choose Coadal?
+              Why Choose Globwick?
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               We make hiring developers simple, risk-free, and highly effective for your business

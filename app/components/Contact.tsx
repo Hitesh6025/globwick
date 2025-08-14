@@ -157,7 +157,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="font-semibold text-white text-lg">Email Us</div>
-                  <div className="text-gray-300">support@coadal.com</div>
+                  <div className="text-gray-300">info@globwick.com</div>
                   <div className="text-magenta-400 text-sm">We respond within 24 hours</div>
                 </div>
               </div>

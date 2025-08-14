@@ -7,13 +7,13 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email Us",
-    details: ["support@coadal.com", "info@coadal.com"],
+    details: ["info@globwick.com"],
     description: "Get in touch with our team"
   },
   {
     icon: Phone,
     title: "Call Us",
-    details: ["+91 95490 98255"],
+    details: ["+91 95096 08121"],
     description: "Speak with our experts"
   },
   {
@@ -34,25 +34,25 @@ const officeLocations = [
   {
     city: "Jaipur",
     country: "India",
-    address: "Sansthan Path, Jhalana Gram, Malviya Nagar, Jaipur, Rajasthan 302017",
-    phone: "+91 95490 98255",
-    email: "jaipur@coadal.com",
+    address: "3rd floor, BTH, Sansthan Path, Malviya Nagar, Jaipur, Rajasthan 302017",
+    phone: "+91 95096 08121",
+    email: "jaipur@globwick.com",
     timezone: "IST (UTC+5:30)"
   },
   {
     city: "Melbourne",
     country: "Australia",
     address: "Melbourne, Australia 3000",
-    phone: "+91 95490 98255",
-    email: "jaipur@coadal.com",
+    phone: "+91 95096 08121",
+    email: "jaipur@globwick.com",
     timezone: "AEDT (UTC+11)"
   },
   {
     city: "Miami",
     country: "USA",
     address: "Miami, FL 33101",
-    phone: "+91 95490 98255",
-    email: "jaipur@coadal.com",
+    phone: "+91 95096 08121",
+    email: "jaipur@globwick.com",
     timezone: "EST (UTC-5)"
   }
 ]

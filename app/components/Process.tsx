@@ -193,7 +193,7 @@ export default function Process() {
   return (
     <section id="process" ref={sectionRef} className="py-24 relative overflow-hidden">
       {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/20 dark:from-gray-900 dark:via-gray-900/90 dark:to-black"></div>
+      <div className="absolute inset-0 "></div>
       
       {/* Animated Background Elements */}
       <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-gradient-to-br from-blue-200/30 to-purple-200/30 dark:from-blue-500/10 dark:to-purple-500/10 rounded-full blur-3xl animate-pulse"></div>

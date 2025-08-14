@@ -39,7 +39,7 @@ export default function About() {
               </span>
             </h2>
             <p className="text-xl text-gray-300 mb-6">
-              Coadal is a premier game development studio where creativity meets technology. We are a collective of
+              Globwick is a premier game development studio where creativity meets technology. We are a collective of
               veteran developers, visionary artists, and passionate gamers committed to pushing the boundaries of
               interactive entertainment.
             </p>
@@ -52,7 +52,7 @@ export default function About() {
           <div className="mt-10 lg:mt-0 about-content">
             <img
               src="/placeholder.svg?width=600&height=450"
-              alt="Coadal Development Team"
+              alt="Globwick Development Team"
               className="rounded-2xl shadow-2xl shadow-magenta-500/20"
             />
           </div>
