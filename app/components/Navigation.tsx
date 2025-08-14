@@ -237,7 +237,7 @@ export default function Navigation() {
               <div className=" h-8 flex items-center justify-center">
                 <img src="/Globwick-icon.png" alt="Globwick Logo" className="size-12 mt-6" />
               </div>
-              <span className="text-gray-400 text-[10px] text-center mt-4">We Create Your Dreams</span>
+              <span className="text-gray-400 text-[10px] text-center mt-5">We Create Your Dreams</span>
             </div>
           </Link>
 

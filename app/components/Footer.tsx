@@ -57,7 +57,7 @@ export default function Footer() {
   ]
 
   const socialLinks = [
-    // { name: "GitHub", icon: Github, href: "https://github.com/coadal", color: "hover:text-gray-300" },
+    // { name: "GitHub", icon: Github, href: "https://github.com/globwick", color: "hover:text-gray-300" },
   { name: "Facebook", icon: Facebook, href: "https://www.facebook.com/globewick/", color: "hover:text-blue-600" },
     { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/company/globewick", color: "hover:text-blue-500" },
     { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/globewick/", color: "hover:text-pink-400" },
